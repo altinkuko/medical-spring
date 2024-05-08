@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="stylesheet" th:href="@{/webjars/bootstrap/5.3.3/css/bootstrap.min.css}">
+    <script th:src="@{/webjars/bootstrap/5.3.3/js/bootstrap.min.js}"></script>
+    <meta charset="UTF-8">
+    <title>Doctors</title>
+</head>
+<body>
+<div class="container">
+    <div class="col-sm-6">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>Doctor Name</th>
+                <th>Specialization</th>
+                <th>Username</th>
+                <th>Details</th>
+            </tr>
+            </thead>
+            <tbody>
+
+            <tr th:each="doctor: ${doctorList}">
+                <td th:text="${doctor.getName()}"></td>
+                <td th:text="${doctor.getSpecialization()}"></td>
+                <td th:text="${doctor.getUsername()}"></td>
+                <td><a th:href="@{/web/doctor/details(id=${doctor.getDoctorId()})}" class="btn btn-info">Details</a></td>
+                <td><a th:href="@{/web/doctor/delete(id=${doctor.getDoctorId()})}" class="btn btn-danger">Delete</a></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+</body>
+</html>
