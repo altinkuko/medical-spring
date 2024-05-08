@@ -18,7 +18,9 @@ public class Appointment {
     private String patientName;
     @Enumerated(value = EnumType.STRING)
     private Status status;
+    @Column(name = "start_time")
     private LocalDateTime start;
+    @Column(name = "end_time")
     private LocalDateTime end;
     private String note;
     @ManyToOne
