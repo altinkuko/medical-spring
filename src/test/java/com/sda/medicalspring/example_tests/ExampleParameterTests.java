@@ -2,13 +2,11 @@ package com.sda.medicalspring.example_tests;
 
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.*;
-import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.stream.Stream;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-@SpringBootTest
 public class ExampleParameterTests {
     @ParameterizedTest
     @ValueSource(ints = {1, 3, 5, -3, 15})

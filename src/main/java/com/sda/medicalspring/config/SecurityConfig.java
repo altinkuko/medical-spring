@@ -67,17 +67,17 @@ public class SecurityConfig implements WebMvcConfigurer {
     }
 
 
-    @PostConstruct
-    public void insertRoles(){
-        if (!roleRepository.existsById("ROLE_ADMIN")){
-            Role role = new Role();
-            role.setRole("ROLE_ADMIN");
-            roleRepository.save(role);
-        }
-        if (!roleRepository.existsById("ROLE_EMPLOYEE")){
-            Role role = new Role();
-            role.setRole("ROLE_EMPLOYEE");
-            roleRepository.save(role);
-        }
-    }
+//    @PostConstruct
+//    public void insertRoles(){
+//        if (!roleRepository.existsById("ROLE_ADMIN")){
+//            Role role = new Role();
+//            role.setRole("ROLE_ADMIN");
+//            roleRepository.save(role);
+//        }
+//        if (!roleRepository.existsById("ROLE_EMPLOYEE")){
+//            Role role = new Role();
+//            role.setRole("ROLE_EMPLOYEE");
+//            roleRepository.save(role);
+//        }
+//    }
 }
