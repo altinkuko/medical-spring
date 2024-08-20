@@ -42,6 +42,7 @@ public class MedicalUserServiceImpl implements MedicalUserService {
                     medicalUser.setRole(role);
                 }
                 medicalUser.setPassword(passwordEncoder.encode(medicalUser.getPassword()));
+                medicalUser.setActive(true);
                 return userRepository.save(medicalUser);
             } else {
                 throw GenericException.usernameExists(medicalUser.getUsername());
